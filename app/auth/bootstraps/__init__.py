@@ -1,0 +1,2 @@
+from .password_bootstrap import bootstrap_auth_by_password
+from .register_bootstrap import bootstrap_register_user
