@@ -36,6 +36,7 @@ class PasswordHasher(IPasswordHasher):
         request_id: Optional[str] = None,
         host: Optional[str] = None,
     ) -> bool:
+        
         return self._context.verify(
             password + self.hasher_config.hash_password_pepper, password_hash
         )

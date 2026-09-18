@@ -19,7 +19,14 @@ from app.shared.api.exception_handlers.validation_exception_handler import valid
 
 from __version__ import __version__
 from app.system.version import version_router
-from app.auth.api.auth_router import auth_api
+#from app.auth.api.auth_router import auth_api
+
+from app.identity.api.identity_router import identity_api
+from app.catalog.api.catalog_router import catalog_api
+from app.inventory.api.inventory_router import inventory_api
+from app.sales.api.sales_router import sales_api
+from app.cash.api.cash_router import cash_api
+from app.reports.api.reports_router import reports_api
 #from app.company.api.company_router import company_api
 #from app.catalogs.api.catalog_router import catalogs_api
 #from app.product.api.product_router import product_api
@@ -28,7 +35,7 @@ from app.auth.api.auth_router import auth_api
 
 from app.shared.infrastructure.settings.pharmacies_db import PharmaciesDbSetting
 from app.shared.infrastructure.settings.hasher_setting import HasherSetting
-from app.auth.infrastructure.settings.token_setting import TokenSetting
+from app.identity.infrastructure.settings.token_setting import TokenSetting
 
 
 def _env_path() -> Path:
@@ -89,7 +96,14 @@ app.add_exception_handler(HTTPException, http_exception_handler)
 app.add_exception_handler(StarletteHTTPException, starlette_http_exception_handler)
 
 app.include_router(version_router)
-app.include_router(auth_api)
+#app.include_router(auth_api)
+app.include_router(identity_api)
+app.include_router(catalog_api)
+app.include_router(inventory_api)
+app.include_router(sales_api)
+app.include_router(cash_api)
+app.include_router(reports_api)
+
 #app.include_router(company_api)
 #app.include_router(catalogs_api)
 #app.include_router(product_api)

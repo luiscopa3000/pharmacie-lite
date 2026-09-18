@@ -1,16 +1,29 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todos los cambios notables de este proyecto se documentarán en este archivo.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/),
+y este proyecto se adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.2.0] - 2026-09-18
+
+### Added
+- Introducción de nuevos dominios de aplicación y módulos: `audit`, `cash`, `catalog`, `identity`, `inventory`, `reports` y `sales`.
+- Añadidos nuevos enrutadores API en `main.py` (`identity_api`, `catalog_api`, `inventory_api`, `sales_api`, `cash_api`, `reports_api`).
+
+### Changed
+- Refactorización del sistema de autenticación, reemplazando el antiguo módulo `auth` con el nuevo módulo `identity`.
+- Actualizada la ruta de importación de `TokenSetting` en `main.py` para reflejar la transición de `auth` a `identity`.
+
+### Removed
+- Eliminado el módulo legado `auth` y sus referencias en `main.py`.
 
 ## [0.1.0] - 2026-09-16
 
 ### Added
-- Initial project setup for the Pharmacie Management System Backend.
-- Core FastAPI application with standard HTTP error handling and middleware setup.
-- Database settings validation configuration (`.env` validation).
-- Authentication flow using JWT tokens (POST `/auth/companies/{id_compania}/access-token`).
-- User creation and security workflows (POST `/security/users`).
-- Basic project documentation, requirements, and `.gitignore`.
+- Configuración inicial del proyecto para el backend del sistema de gestión Pharmacie.
+- Aplicación principal FastAPI con manejo estándar de errores HTTP y configuración de middleware.
+- Configuración de validación de ajustes de base de datos (validación `.env`).
+- Flujo de autenticación mediante tokens JWT (POST `/auth/companies/{id_compania}/access-token`).
+- Flujos de trabajo de seguridad y creación de usuarios (POST `/security/users`).
+- Documentación básica del proyecto, dependencias y `.gitignore`.
